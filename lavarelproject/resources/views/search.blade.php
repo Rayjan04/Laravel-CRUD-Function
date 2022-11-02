@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -20,9 +19,7 @@
                <button type="submit" class="btn btn-info">Add data</button>
           </form>
       </div>
-      <div>
         <div class="row">
-
               <nav class="navbar navbar-light bg-light justify-content-between" >
                 <a class="navbar-brand">Tabledata</a>
                 <form class="form-inline" action="Search" method="get">
@@ -44,14 +41,14 @@
               </thead>
               <tbody>
                 {{-- Control display function output --}}
-                @foreach ($Userdatas as $Users)
+                @foreach ($result as $Users)
                 <tr class="text-center">   
                     <td>{{$Users->id}}</td>
                     <td>{{$Users->fullname}}</td>
                     <td>{{$Users->email}}</td>
                     <td>
-                    <a href="{{"Edit/".$Users['id']}}" class="btn btn-success" >Edit</a>
-                    <a href="{{"Delete/".$Users['id']}}" class="btn btn-danger" >Delete</a>
+                        <a href="{{"Edit/".$Users['id']}}" class="btn btn-success " >Edit</a>
+                        <a href="{{"Delete/".$Users['id']}}" class="btn btn-danger" >Delete</a>
                     </td>
                 </tr>
                 @endforeach

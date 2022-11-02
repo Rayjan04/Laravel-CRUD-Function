@@ -32,3 +32,7 @@ Route::get('Delete/{id}', [App\Http\Controllers\UserController::class, 'Delete']
 //route for Edit 
 Route::get('Edit/{id}', [App\Http\Controllers\UserController::class, 'DisplayEdit']);
 Route::post('Update', [App\Http\Controllers\UserController::class, 'Update']);
+
+
+//route search
+Route::get('Search', [App\Http\Controllers\UserController::class, 'Search']);

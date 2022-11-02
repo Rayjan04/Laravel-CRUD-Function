@@ -67,4 +67,17 @@ class UserController extends Controller
         ]);
         return redirect('home');
     }
+
+
+    public function Search(Request $request){
+         
+        // $search = $_GET['search'];
+        $search = $request->get('search');
+        $result = usertable::where('fullname','LIKE', '%'.$search.'%')
+        ->get();
+       
+        return view('search',compact('result'));
+        
+    }
+
 }
